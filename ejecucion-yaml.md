@@ -8,3 +8,8 @@ kubectl apply -f 05-api-service.yaml
 kubectl apply -f 06-api-hpa.yaml
 
 ```
+
+## Generar un forward
+```sh
+kubectl port-forward service/api-service 8080:80
+```
