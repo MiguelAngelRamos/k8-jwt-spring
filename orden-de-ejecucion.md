@@ -41,7 +41,6 @@ kubectl apply -f k8s/06-api-hpa.yaml
 ## todos los comandos juntos
 
 ```sh
-```sh
 kubectl apply -f k8s/namespace.yaml
 kubectl apply -f k8s/01-pv-pvc-postgres.yaml
 kubectl apply -f k8s/configmap.yaml
