@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api-deployment
+  namespace: apirest-ns
 spec:
   replicas: 1
   selector:
@@ -14,6 +15,18 @@ spec:
     spec:
       containers:
       - name: api
-        image: mramoscli/rest-jwt-spring:1.0
+        image: mramoscli/spring-boot-jwt:1.2
         ports:
           - containerPort: 8080
+        envFrom:
+        - configMapRef:
+              name: apirest-config
+        - secretRef:
+            name: apirest-secret
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"  
