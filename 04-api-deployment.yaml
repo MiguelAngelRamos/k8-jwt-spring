@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: mramoscli/spring-boot-jwt:1.2
+        image: mramoscli/rest-jwt-spring:1.5
         ports:
           - containerPort: 8080
         envFrom:
